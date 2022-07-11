@@ -1,10 +1,10 @@
 <template>
 
   <div id="nav" >
-    <router-link to="/" v-if="!isLogged">Home</router-link>
+    <router-link to="/">Home</router-link>
     <router-link to="/login" v-if="!isLogged">Login</router-link>
     <router-link to="/register" v-if="!isLogged">Register</router-link>
-     <router-link to="/signed">Signed</router-link>
+     <router-link to="/signed" v-if="isLogged">Database</router-link>
      <button id="logout" @click="logout" v-if="isLogged">Logout</button> 
   </div>  
         <transition name="fade" mode="out-in">
@@ -71,6 +71,8 @@ const logout = () => {
 }
 
 
+
+
 @font-face {
   font-family: OpTic;
   src: url(assets/fonts/OpTic.ttf);
@@ -101,19 +103,19 @@ body {
     background-size: 100%;
     background-position: 50% 20%;
     color: ivory;
-    font-size: 2em;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 1em;
     padding: 2vw;
     font-family: OpTic;
+    flex-wrap: wrap;
+    font-size: clamp(1em, 5vw, 2em);
 
 }
 
 #nav a {
   font-weight: bold;
-  /* color: #2c3e50; */
   transition: 0.5s;
   text-decoration: none;
   color: rgba(255, 255, 240, 0.699);
@@ -129,9 +131,24 @@ body {
 
 #logout {
   font-family: OpTic;
-  left: 2em;
+  left: 1em;
   position: absolute;
   height: 3em;
   width: 8em;
+  font-size: clamp(0.2em, 5vw, 0.5em);
 }
+
+@media only screen and (max-width: 320px)
+{
+
+  #logout {
+  left: 1em;
+  height: 2em;
+  width: 6em;
+  top: 6vh;
+  font-size: clamp(0.2em, 5vw, 0.5em);
+}
+
+}
+
 </style>

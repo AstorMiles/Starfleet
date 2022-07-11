@@ -2,10 +2,10 @@
 
   <div class="bg">
       <div class="greatfilter">
-         <div id="registerbox">
-    <!-- <input type="text" placeholder="First name" required v-model='name'>  
+        <div id="registerbox">
+    <input type="text" placeholder="First name" required v-model='name'>  
     <input type="text" placeholder="Last name" required v-model='surname'>
-    <input type="number" placeholder="Age" required v-model="age"> -->
+    <input type="number" placeholder="Age" required v-model="age">
 
     <input type="text" placeholder="Email" required v-model="email" />
 
@@ -47,7 +47,7 @@
                     </div>             
                 </div>
 
-    <!-- <input type="text" placeholder="Username" required v-model="username">     -->
+    <input type="text" placeholder="Username" required v-model="username">    
     
     <input
       type="password"
@@ -55,11 +55,10 @@
       required
       v-model="password"
     />
-    <!-- <input type="password" placeholder="Repeat password" v-model="repeatpassword">   -->
-
+    <input type="password" placeholder="Repeat password" v-model="repeatpassword">  
     <button @click="register" id="regbutton">Register</button>
   </div>
-  <!-- <div v-if="error" class="error">{{ error.message }}</div> -->
+
   </div>
     </div>
 </template>
@@ -114,11 +113,6 @@ backdrop-filter: blur(3px);
 }
 
 
-.error {
-  color: red;
-  font-size: 18px;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -134,7 +128,10 @@ backdrop-filter: blur(3px);
   width: 350px;
   background-color: rgb(14, 14, 2);
   padding: 1%;
-  margin-top: 15vh;
+  margin-top: 6vh;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 input {
@@ -154,7 +151,6 @@ input {
   display: inline-block;
   margin: 8px;
   accent-color: black;
-  background-color: red;
 }
 
 .iconholder{
@@ -201,15 +197,9 @@ label {
   width: 100px;
   margin: 5px;
   color: ivory;
+  font-size: clamp(0.5em, 2vw, 1em);
 }
 
-#passError {
-  color: red;
-  font-size: 0.6em;
-  font-weight: 800;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
 
 #regbutton {
   width: 80%;
@@ -222,7 +212,86 @@ label {
   font-family: OpTic;
   font-size: 1em;
   letter-spacing: 0.6em;
+  margin-top: 15px;
 }
+
+
+@media only screen and (max-width: 600px)
+{
+
+  #registerbox {
+
+  height: 600px;
+  width: 300px;
+  padding: 1%;
+  margin-top: 8vh;
+}
+
+
+}
+
+@media only screen and (max-width: 350px)
+{
+
+    #registerbox {
+
+  height: 550px;
+  width: 200px;
+  padding: 4%;
+  margin-top: 8vh;
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+}
+
+.icon2 {
+  height: 55px;
+  width: 55px;
+}
+
+#gender {
+display: flex;
+  justify-content: center;
+  gap:5px;
+}
+
+#vocation {
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+}
+
+
+
+.choiceholder {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+
+}
+
+#regbutton {
+  width: 80%;
+  padding: 15px;
+  border: none;
+  background-color: ivory;
+  color: black;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-family: OpTic;
+  font-size: 0.6em;
+  letter-spacing: 0.6em;
+  margin-top: 5px;
+}
+
+}
+
+
+
+
+
 </style>
 
 
@@ -252,7 +321,7 @@ const register =()=>{
     })
     .catch((error)=>{
         console.log(error.code);
-        alert(error.message);
+        // alert(error.message);
     })
 
 }

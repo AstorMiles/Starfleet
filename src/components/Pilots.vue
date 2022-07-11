@@ -1,5 +1,4 @@
 <template>
-    <!-- <div>
         <table>
             <ul>
                 <li>Jek "Piggy" Porkins</li>
@@ -15,24 +14,39 @@
                 <li>Thane Kyrell</li>
                 <li>Wedge Antilles</li>
             </ul>
-        </table>
-    </div> -->
-      <div>
-    <ul class="tabs__header">
-      <li v-for="tab in tabs" :key="tab.title">{{ tab.title }}</li>
-    </ul>
-    <slot></slot>
-  </div>
+        </table>        
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        selectedIndex: 0 // the index of the selected tab,
-        tabs: [],        // all of the tabs
-      }
-    }
-  }
+export default{
+    name: 'Pilots'
+}
+
 </script>
+
+<style scoped>
+
+
+table
+{
+
+    color: ghostwhite;
+    text-align: left!important;    
+    font-family: Arial!important;
+    backdrop-filter: brightness(50%);
+    font-size: clamp(0.3em, 2vw, 0.7em);
+
+    
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+li {
+    margin: 15px;
+    
+}
+</style>
 

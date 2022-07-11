@@ -1,7 +1,7 @@
 <template>
      <div class="bg">
      </div> 
-  <div class="home"></div>
+  <!-- <div class="home"></div> -->
 </template>
 
 <script>

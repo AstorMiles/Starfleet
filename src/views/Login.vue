@@ -150,26 +150,9 @@ backdrop-filter: blur(3px);
     color: ivory;
     background-color: black;
 
-} 
+}       
 
-#memberme
-{
 
-    width: 50%;
-    gap: 5px;
-    margin: 10px;
-    display: flex;  
-    gap: 5px;
-
-}
-      
-
-    p
-    {
-        width: auto;
-        font-size: 1em;
-        word-wrap: none;
-    }
 
 #loginbutton{
 
