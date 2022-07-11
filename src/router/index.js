@@ -33,16 +33,4 @@ const router = createRouter({
   routes
 })
 
-// router.beforeEach((to,from, next)=>{
-//   if (to.matched.some((record)=> record.meta.requiresAuth)){
-//     if(getAuth().currentUser){
-//       next();
-//     }
-
-//   }else{
-//     next()
-//   }
-
-// })
-
 export default router;
